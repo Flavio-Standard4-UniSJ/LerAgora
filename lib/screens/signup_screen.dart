@@ -11,6 +11,7 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
   final _usernameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   Future<void> _register() async {
@@ -52,12 +53,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             children: [
               TextFormField(
-                key: const ValueKey('emailField'),
-                controller: _usernameController,
+                controller: _emailController,
                 decoration: const InputDecoration(labelText: 'E-mail'),
+                keyboardType: TextInputType.emailAddress,
                 validator: (value) {
-                  if (value == null || value.isEmpty || !value.contains('@')) {
-                    return 'e-mail inválido';
+                  if (value == null ||
+                      !RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$').hasMatch(value)) {
+                    return 'E-mail inválido';
                   }
                   return null;
                 },
@@ -67,16 +69,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 obscureText: true,
                 decoration: const InputDecoration(labelText: 'Senha'),
                 validator: (value) {
-                  if (value == null || value.isEmpty || value.length < 4) {
-                    return 'Senha muito curta';
+                  if (value == null || value.length < 6) {
+                    return 'Senha deve ter ao menos 6 caracteres';
                   }
                   return null;
                 },
               ),
-              const SizedBox(height: 20),
               ElevatedButton(
-                key: const ValueKey('signupButton'),
-                onPressed: _register,
+                onPressed: () async {
+                  if (_formKey.currentState!.validate()) {
+                    // salvar usuário
+                  }
+                },
                 child: const Text('Cadastrar'),
               ),
             ],

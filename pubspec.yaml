@@ -1,0 +1,57 @@
+name: leragora
+description: >
+  LerAgora is a simple and free mobile app that allows users to read classic eBooks in PDF format 
+  and listen to them with text-to-speech (TTS). Users can choose a male or female voice for reading 
+  and enjoy a clean, easy-to-use interface. The app supports offline reading and voice features, 
+  optimized for Android.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  syncfusion_flutter_pdfviewer: ^30.1.40
+  flutter_tts: ^4.2.3
+  syncfusion_flutter_pdf: ^30.1.40
+  path_provider: ^2.1.1
+  sqflite: ^2.4.2
+  path: ^1.9.1
+  shared_preferences: ^2.2.2
+  flutter_file_dialog: ^3.0.2
+  crypto: ^3.0.3
+  google_mobile_ads: ^5.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.9
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo.png
+    - assets/logo_splash.png
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/logo.png
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/logo_splash.png
+  android: true
+  ios: true
+  web: false
+  fullscreen: true

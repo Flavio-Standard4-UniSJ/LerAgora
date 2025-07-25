@@ -43,5 +43,5 @@ A new Flutter project.
 1. Clone o projeto:
 
 ```bash
-git clone https://github.com/flavio-standard4-unisj/leragora
+git clone https://github.com/Flavio-Standard4-UniSJ4/leragora.git
 cd leragora

@@ -12,7 +12,7 @@ class AdService {
   /// Carrega um anúncio intersticial
   static void loadInterstitialAd() {
     InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/1033173712', // ID de teste
+      adUnitId: 'ca-app-pub-7484139098650501/3832489058',
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {
